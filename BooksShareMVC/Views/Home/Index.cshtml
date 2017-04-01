@@ -1,0 +1,51 @@
+﻿@*@model IEnumerable<BooksShareMVC.Book>*@
+
+@{
+    ViewBag.Title = "Books Share";
+}
+@section featured {
+    <section class="featured">
+        @*<div align="center">*@
+        <div class="container-full">
+            <div class="row">
+                <div class="col-lg-12 text-center v-center">
+                    <h1>@ViewBag.Title</h1>
+                    <h3>@ViewBag.Message</h3>
+                    <br>
+                    <br>
+                    <br>
+                    <form class="col-lg-12" method="POST" action="/View/Book">
+                        <div class="input-group" style="width: 540px; text-align: center; margin: 0 auto;">
+                            <input class="form-control input-lg" id="id" name="id" title="Search by author, title or by university/college name" placeholder="Search by author, title or by university/college name" type="text">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-info" type="submit"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @*<div style="margin-top:15px;">
+                <table class="table table-striped">
+                    @foreach (var item in Model)
+                    {
+                        <tr class="" id="row-@item.ID">
+                            <td>@item.ID</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                        </tr>
+                    }
+                </table>
+            </div>*@
+            <div class="row">
+                <div class="col-lg-12 text-center v-center" style="font-size: 39pt;">
+                    <a href="#"><i class="icon-google-plus"></i></a><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-github"></i></a><a href="#"><i class="icon-pinterest"></i></a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+}

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BooksShareMVC.Book>
+@{
+    ViewBag.Title = "Book";
+}
+
+<h2>Book</h2>
+<div itemscope="" itemtype="http://schema.org/Book" class="col-md-11 result">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            @*<tr>
+                <td rowspan="2" width="20%" align="center"><img src="https://books.google.co.in/books/content?id=T0oECdfaEaAC&printsec=frontcover&img=1&zoom=1&h=160&stbn=1"/></td>
+            </tr>
+            <tr><td></td></tr>
+            <tr><td>@item.Title</td></tr>
+            <tr><td>@item.Language</td></tr>*@
+            <div class="row">
+                <div class="col-md-2">
+                    @*<a href="http://studentdesk.in/How-To-Face-Common-Proficiency-Test/1008">*@
+                    <a href="/View/Show/@item.ID">
+                        <img width="350" height="150" class="img-responsive mtopfive" alt="How To Face Common Proficiency Test book on exchange" src="http://studentdesk.in/images/1024/books/large/how-to-face-common-proficiency-test1008jo4-by-Author-The-Board-Of-Studies-Ica.jpg" itemprop="image">
+                    </a>
+                </div>
+                <div class="col-md-10 product_results">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h3 itemprop="name">
+                                <a href="/View/Show/@item.ID">
+                                    <b class="defaultcolor">@item.Title</b>
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="col-md-5">
+                            <b class="price" itemprop="price">
+                                <span class="defaultcolor">On Exchange
+                        </span>
+                            </b>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span itemprop="author"><b>Author: </b>@item.AuthorID</span>
+                            </div>
+                            <div class="col-md-12">
+                                <b>City: </b>@item.CityID
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a class="btn btn-primary" style="padding: 6px 41px;" href="/View/Show/@item.ID">About Book</a>
+                            <i class="pull-right" id="posted_on" itemprop="dateCreated">@item.PostedOn</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        }
+    }
+</div>
